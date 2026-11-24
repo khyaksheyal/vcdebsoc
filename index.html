@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vidyasagar College Debating Society</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&family=EB+Garamond:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f6fa;--surface:#ffffff;--ink:#14182e;--muted:#4b5170;--line:#d5d8e6;
+  --prop:#1b2a6b;--opp:#a4262c;--brass:#c58a00;--on-dark:#f5f6fa;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0f1224;--surface:#181c36;--ink:#eceefa;--muted:#a3a9c9;--line:#2c3157;--prop:#8fa2ff;--opp:#ff8a8f;--brass:#e8b53a;}
+}
+:root[data-theme="dark"]{--bg:#0f1224;--surface:#181c36;--ink:#eceefa;--muted:#a3a9c9;--line:#2c3157;--prop:#8fa2ff;--opp:#ff8a8f;--brass:#e8b53a;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.075rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;font-family:var(--display);font-weight:500;flex-wrap:wrap}
+nav b{display:inline-flex;align-items:baseline;gap:.45rem;flex-wrap:wrap;font-weight:400}
+.b1{font-family:Helvetica,"Helvetica Neue",Arial,sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.03em;text-transform:uppercase}
+.b2{font-family:"EB Garamond",Garamond,"Times New Roman",serif;font-style:italic;font-weight:700;font-size:1.4rem}
+.mk{width:42px;height:42px;flex:none;align-self:center;color:var(--prop)}
+.fmark{display:block;width:60px;height:60px;margin-bottom:.75rem;color:var(--prop)}
+nav div{display:flex;gap:1.25rem;flex-wrap:wrap}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:68vh;margin-top:.5rem;border-radius:6px;overflow:hidden}
+.side{padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:flex-end;color:var(--on-dark);position:relative;overflow:hidden}
+.side span,.side strong{position:relative}
+.fig{position:absolute;top:5%;height:62%;width:auto;opacity:.28;pointer-events:none}
+.p .fig{right:8%}
+.o .fig{left:8%}
+.side.p{background:#1b2a6b}
+.side.o{background:#a4262c}
+.side span{font-family:var(--display);font-weight:500;opacity:.8}
+.side strong{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,4.2rem);line-height:1;margin-top:.4rem}
+.motion{margin:1.25rem 0 0;padding:1.25rem 1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:6px;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.motion q{font-family:var(--display);font-weight:700;font-size:clamp(1.15rem,2.6vw,1.6rem);line-height:1.25;quotes:none;flex:1 1 320px}
+.motion button{font:600 .95rem var(--display);padding:.65rem 1.1rem;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:4px;cursor:pointer}
+.motion button:hover{background:var(--ink);color:var(--bg)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5.5vw,3.8rem);line-height:1.05;margin:2.5rem 0 .75rem;max-width:18ch}
+.lead{max-width:60ch;color:var(--muted);font-size:1.2rem}
+
+section{padding:3.5rem 0 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3.5vw,2.3rem);margin:0 0 1rem}
+h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin:0 0 .4rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.col{border-top:4px solid var(--prop);padding-top:1rem}
+.col:nth-child(2){border-color:var(--opp)}
+.col:nth-child(3){border-color:var(--brass)}
+.col:nth-child(4){border-color:var(--ink)}
+.col p{margin:0;color:var(--muted)}
+
+.tl{list-style:none;margin:0;padding:0 0 0 1.25rem;border-left:3px solid var(--line)}
+.tl li{position:relative;padding:0 0 1.5rem}
+.tl li::before{content:"";position:absolute;left:calc(-1.25rem - 8px);top:.45rem;width:13px;height:13px;border-radius:50%;background:var(--prop);border:3px solid var(--bg)}
+.tl li:nth-child(even)::before{background:var(--opp)}
+.tl time{font-family:var(--display);font-weight:700;display:block}
+.tl h3{margin:.1rem 0 .2rem}
+.tl p{margin:0;color:var(--muted);max-width:64ch}
+.jump{padding-top:2.5rem}
+.jump a{display:inline-block;background:var(--ink);color:var(--bg);font:700 1rem var(--display);padding:.8rem 1.3rem;border-radius:4px;text-decoration:none}
+.jump a:hover{background:var(--brass);color:#14182e}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.98rem;line-height:1.5}
+th,td{text-align:left;padding:.8rem 1rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--display);font-weight:700}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--display);font-weight:700;white-space:nowrap}
+.pairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem 2rem;margin:2rem 0 0}
+.pairs div{border-left:4px solid var(--brass);padding-left:1rem}
+.pairs dt{font-family:var(--display);font-weight:700}
+.pairs dd{margin:.15rem 0 0;color:var(--muted)}
+.events{border-top:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.ev time{font-family:var(--display);font-weight:700;color:var(--prop)}
+.ev p{margin:.15rem 0 0;color:var(--muted)}
+.note{font-size:.95rem;color:var(--muted);margin-top:.75rem}
+
+.join{margin-top:3.5rem;background:var(--prop);color:var(--on-dark);border-radius:6px;padding:2.5rem 2rem}
+:root[data-theme="dark"] .join,
+:root:not([data-theme="light"]) .join{--j:1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .join{background:#242b5c;color:#eceefa}}
+.join h2{margin-bottom:.5rem}
+.join p{max-width:56ch;margin:0 0 1.25rem}
+.join a{display:inline-block;background:#f5f6fa;color:#14182e;font:700 1rem var(--display);padding:.8rem 1.3rem;border-radius:4px;text-decoration:none}
+.join a:hover{background:#e8b53a}
+.join .ig{display:inline-flex;align-items:center;vertical-align:top;background:transparent;color:inherit;border:2px solid currentColor;padding:calc(.8rem - 2px) calc(1.3rem - 2px);margin:.6rem 0 0 .6rem}
+.join .ig:hover{background:#e8b53a;color:#14182e;border-color:#e8b53a}
+.join .ig svg{display:block;width:26px;height:26px}
+footer{padding:2.5rem 0 2rem;color:var(--muted);font-size:.95rem}
+
+@media (max-width:640px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .side{padding:1.75rem 1.25rem;min-height:160px}
+  .fig{height:82%;top:9%}
+  .p .fig{right:5%}
+  .o .fig{left:auto;right:5%}
+  .ev{grid-template-columns:1fr;gap:.2rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .motion q{transition:opacity .25s}
+  .motion q.fade{opacity:0}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M24 77 A40 40 0 1 1 76 77" stroke-width="2.2"/><path d="M50 48 C50 42 52 40 58 37" stroke-width="1.8"/><rect x="38.5" y="61" width="9" height="20" stroke-width="1.6"/><rect x="52.5" y="61" width="9" height="20" stroke-width="1.6"/><path d="M12 86 H33 M67 86 H88" stroke-width="0.8"/></g><g fill="currentColor"><circle cx="60" cy="36" r="3.2"/><path d="M30 48 H70 L66 52.5 H34 Z"/><path d="M34 54.5 H66 L63 58.5 H37 Z"/><path d="M36 82 H64 V84 H62 L63 87 H37 L38 84 H36 Z"/></g></symbol></svg>
+<div class="wrap">
+  <nav aria-label="Main">
+    <b><svg class="mk" aria-hidden="true"><use href="#mark"/></svg><span class="b1">Vidyasagar College</span> <span class="b2">Debating Society</span></b>
+    <div><a href="#formats">Formats</a><a href="#classes">Classification</a><a href="#basics">How it works</a><a href="#history">History</a><a href="#events">Events</a><a href="#join">Join</a></div>
+  </nav>
+
+  <header>
+    <div class="hero" aria-hidden="true">
+      <div class="side p"><svg class="fig" viewBox="0 0 120 200" fill="currentColor" aria-hidden="true"><circle cx="48" cy="34" r="13"/><path d="M33 30 Q48 2 63 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M34 58 Q48 48 64 58 L70 120 L78 192 H22 L30 120 Z"/><path d="M62 64 L100 38" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><circle cx="104" cy="36" r="6"/></svg><span>Proposition</span><strong>This house believes</strong></div>
+      <div class="side o"><svg class="fig" viewBox="0 0 120 200" fill="currentColor" aria-hidden="true"><circle cx="72" cy="34" r="13"/><path d="M56 30 Q72 8 88 30 Q94 48 88 58 Q84 46 84 40 L60 40 Q60 46 56 58 Q50 48 56 30 Z"/><path d="M54 60 Q72 50 90 60 L96 118 L104 192 H36 L46 118 Z"/><path d="M58 66 L20 44" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><circle cx="16" cy="42" r="6"/><path d="M14 40 L5 34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span>Opposition</span><strong>This house regrets</strong></div>
+    </div>
+    <div class="motion" role="group" aria-label="Practice motion">
+      <q id="motion" aria-live="polite">This house would make economics compulsory in every undergraduate degree.</q>
+      <button id="next" type="button">New motion</button>
+    </div>
+    <h1>Argue both sides of the question.</h1>
+    <p class="lead">The debating society of Vidyasagar College, Kolkata. We meet to practise public speaking, build cases under time limits, and compete in English, Bangla and Hindi.</p>
+  </header>
+
+  <div class="jump"><a href="#events">Jump to the event calendar</a></div>
+
+  <section id="formats">
+    <h2>Debate formats we practise</h2>
+    <div class="cols">
+      <div class="col"><h3>British Parliamentary</h3><p>Four teams of two in one room. Each team argues for its own position and against the other three.</p></div>
+      <div class="col"><h3>Asian Parliamentary</h3><p>Two teams of three with reply speeches. The format rewards clear structure and direct clash.</p></div>
+      <div class="col"><h3>Oxford</h3><p>Two teams argue for and against a motion. The audience votes before and after the debate, and the side that moves more minds wins.</p></div>
+      <div class="col"><h3>Extempore and elocution</h3><p>Short prepared and unprepared speeches in English, Bangla and Hindi for members who want to start smaller.</p></div>
+    </div>
+  </section>
+
+  <section id="classes">
+    <h2>Classification of the formats</h2>
+    <p class="lead" style="margin-top:0">Debate formats differ in team size, preparation time, who decides the result and whether speakers work alone. Timings vary between tournaments, so the table gives typical values.</p>
+    <div class="tbl" style="margin-top:1.5rem">
+      <table>
+        <thead><tr><th>Format</th><th>Participants</th><th>Preparation</th><th>Decided by</th></tr></thead>
+        <tbody>
+          <tr><td>British Parliamentary</td><td>Four teams of two in one round. Opening Government, Opening Opposition, Closing Government and Closing Opposition each give two speeches of about seven minutes.</td><td>About 15 minutes after the motion is announced</td><td>A panel ranks all four teams from first to fourth</td></tr>
+          <tr><td>Asian Parliamentary</td><td>Two teams of three. Each speaker gives a substantive speech and one speaker per team gives a shorter reply speech.</td><td>Commonly 30 minutes after the motion is announced</td><td>A panel picks the winning team</td></tr>
+          <tr><td>Oxford</td><td>Two teams, with the number of speakers set by the organisers. Audience questions often follow the speeches.</td><td>Often prepared in advance, since the motion is usually circulated earlier</td><td>The audience votes before and after, and the larger swing wins</td></tr>
+          <tr><td>Extempore</td><td>One speaker on a topic given on the spot.</td><td>A few minutes or none</td><td>A judge scores content, structure and delivery</td></tr>
+          <tr><td>Elocution</td><td>One speaker delivering a prepared piece, original or recited.</td><td>Prepared at home</td><td>A judge scores voice, pronunciation, pace and expression</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <dl class="pairs">
+      <div><dt>By number of speakers</dt><dd>Team formats: British Parliamentary, Asian Parliamentary and Oxford. Individual formats: extempore and elocution.</dd></div>
+      <div><dt>By preparation</dt><dd>Impromptu: extempore and the parliamentary formats, where the motion is announced shortly before the debate. Prepared: elocution and most Oxford debates.</dd></div>
+      <div><dt>By who decides</dt><dd>A panel of judges decides the parliamentary formats. The audience decides Oxford debates. A single judge scores individual speakers.</dd></div>
+      <div><dt>By language</dt><dd>The society holds sessions in English, Bangla and Hindi.</dd></div>
+    </dl>
+  </section>
+
+  <section id="basics">
+    <h2>How a debate works</h2>
+    <div class="cols">
+      <div class="col"><h3>The motion</h3><p>Every debate starts with a statement, such as This house would ban private tuition for students below Class 8. One side supports the motion and the other opposes it, whatever the speakers personally think.</p></div>
+      <div class="col"><h3>Burden of proof</h3><p>The proposition must show that the motion should be accepted. The opposition must show that it should not. Each side builds a case with definitions, arguments and examples.</p></div>
+      <div class="col"><h3>Speeches</h3><p>Speakers deliver timed speeches in a fixed order. The first speakers set out the case, the middle speakers extend it and answer the other side, and the last speakers summarise the debate.</p></div>
+      <div class="col"><h3>Points of information</h3><p>In parliamentary formats, a speaker on the other side may stand and offer a short question or challenge. The speaker holding the floor can accept or decline. The first and last minute of each speech are protected from points.</p></div>
+      <div class="col"><h3>Rebuttal</h3><p>Rebuttal means answering the strongest arguments of the other side, not the weakest. A rebuttal explains why an argument is wrong, why it matters less than claimed, or why it supports the other side.</p></div>
+      <div class="col"><h3>Judging</h3><p>In British Parliamentary debate, judges assess matter (the content of arguments), manner (delivery) and method (structure and use of time). Other formats weigh these elements differently.</p></div>
+    </div>
+    <dl class="pairs">
+      <div><dt>Policy motions</dt><dd>Propose an action. Example: This house would make attendance optional in college.</dd></div>
+      <div><dt>Value motions</dt><dd>Ask whether something is good or bad. Example: This house believes that social media does more harm than good to student life.</dd></div>
+      <div><dt>Regret motions</dt><dd>Ask whether a past or present development was a mistake. Example: This house regrets the dominance of English in higher education.</dd></div>
+      <div><dt>Comparative motions</dt><dd>Ask which of two options is better. Example: This house prefers continuous assessment to final exams.</dd></div>
+    </dl>
+  </section>
+
+  <section id="history">
+    <h2>A short history of debating</h2>
+    <p class="lead" style="margin-top:0">Organised argument is older than most institutions that teach it. The main steps run as follows.</p>
+    <ol class="tl" style="margin-top:1.75rem">
+      <li><time>5th century BCE, Athens</time><h3>Both sides of every question</h3><p>Protagoras and other sophists taught citizens to argue. Protagoras held that every question has two opposing arguments, which is the idea behind assigning a debater a side. The assembly and the law courts made public speaking a civic skill.</p></li>
+      <li><time>4th century BCE, Athens</time><h3>Aristotle writes the Rhetoric</h3><p>Aristotle described three modes of persuasion: ethos (the credibility of the speaker), pathos (the emotion of the audience) and logos (the reasoning itself). Debate judges still use these ideas.</p></li>
+      <li><time>Ancient India</time><h3>Shastrartha and the Nyaya tradition</h3><p>Public philosophical debate was a long-standing practice. The Brihadaranyaka Upanishad records Yajnavalkya answering challengers, among them Gargi. The Nyaya Sutra later separated debate into vada (a joint search for the truth), jalpa (debate aimed at winning) and vitanda (attack with no position of its own).</p></li>
+      <li><time>1st century BCE and 1st century CE, Rome</time><h3>Cicero and Quintilian</h3><p>Cicero practised and wrote about oratory. Quintilian wrote the Institutio Oratoria, a full programme for training a speaker from childhood.</p></li>
+      <li><time>12th and 13th centuries, Europe</time><h3>The medieval disputation</h3><p>Universities in Paris, Oxford and Bologna made the disputatio part of teaching. A master stated a position, answered objections and gave a ruling.</p></li>
+      <li><time>1815 and 1823, Britain</time><h3>The Cambridge Union and the Oxford Union</h3><p>Student societies adopted the manner of the House of Commons, with a motion, speakers for and against, and a vote. The Oxford Union also gave its name to the Oxford debate format.</p></li>
+      <li><time>1828, Calcutta</time><h3>Derozio and the Academic Association</h3><p>Henry Derozio, a teacher at Hindu College, led students in debates on religion, society and politics. The Academic Association was an early student debating forum in Bengal.</p></li>
+      <li><time>1981 onwards</time><h3>World Universities Debating Championship</h3><p>The first championship was held in Glasgow in 1981. It standardised British Parliamentary debating for university teams around the world.</p></li>
+      <li><time>Today</time><h3>Colleges across Kolkata and Asia</h3><p>British Parliamentary is the format of the World Universities Debating Championship. Asian Parliamentary is widely used in tournaments across Asia. Oxford-style debates are common in public events and inter-college contests.</p></li>
+    </ol>
+  </section>
+
+  <section id="events">
+    <h2>Upcoming events</h2>
+    <div class="events">
+      <div class="ev"><time>Date to be set</time><div><h3>Intra-college Oxford debate</h3><p>Teams from the college argue for and against the motion.</p></div></div>
+      
+      
+    </div>
+    <p class="note">Event dates will be announced soon. Email the society to be notified.</p>
+  </section>
+
+  <section id="join" style="padding-top:0">
+    <div class="join">
+      <h2>Join the society</h2>
+      <p>Send us your name, year and department. We will reply with the next session time and the first motion.</p>
+      <a href="mailto:vcdebsoc@gmail.com?subject=Joining%20the%20Debating%20Society">Email the society</a> <a class="ig" href="https://www.instagram.com/vcdebsoc/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    </div>
+  </section>
+
+  <footer><svg class="fmark" aria-hidden="true"><use href="#mark"/></svg>Vidyasagar College Debating Society<br>Vidyasagar College, 17, Bidhan Sarani<br>Kolkata - 700 006<br>vcdebsoc@gmail.com<br>Instagram: <a href="https://www.instagram.com/vcdebsoc/" target="_blank" rel="noopener">@vcdebsoc</a></footer>
+</div>
+
+<script>
+(function(){
+  var motions=[
+    "This house would make economics compulsory in every undergraduate degree.",
+    "This house believes that colleges should replace exams with continuous assessment.",
+    "This house would ban private tuition for students below Class 8.",
+    "This house regrets the dominance of English in higher education.",
+    "This house would make attendance optional in college.",
+    "This house believes that social media does more harm than good to student life.",
+    "This house would introduce a four-day working week.",
+    "This house believes that India should adopt a universal basic income.",
+    "This house would abolish the reservation of seats in private universities.",
+    "This house regrets the rise of coaching centres.",
+    "This house would make Bangla a compulsory subject in every school in West Bengal.",
+    "This house believes that Hindi should be the national language of India.",
+    "This house would ban political parties from campuses.",
+    "This house believes that student elections strengthen democracy.",
+    "This house prefers continuous assessment to final exams.",
+    "This house would replace the board exam system with a single national entrance test.",
+    "This house regrets the decline of the humanities in higher education.",
+    "This house would make voting compulsory in India.",
+    "This house believes that the death penalty should be abolished.",
+    "This house would lower the voting age to 16.",
+    "This house believes that celebrity endorsements of products should be banned.",
+    "This house would ban single-use plastics nationwide.",
+    "This house believes that developing countries should prioritise growth over environmental protection.",
+    "This house would tax meat to reduce carbon emissions.",
+    "This house prefers public transport to private cars in large cities.",
+    "This house believes that cryptocurrency should be banned in India.",
+    "This house would cap the salaries of chief executives.",
+    "This house regrets the growth of the gig economy.",
+    "This house believes that free trade benefits developing economies more than protectionism.",
+    "This house would nationalise all private banks.",
+    "This house regrets the rise of online shopping.",
+    "This house believes that artificial intelligence will create more jobs than it destroys.",
+    "This house would ban the use of artificial intelligence in school assignments.",
+    "This house regrets the shift from print to digital news.",
+    "This house would hold social media companies legally responsible for false information on their platforms.",
+    "This house believes that online learning should replace classroom teaching.",
+    "This house would require every student to complete a year of national service.",
+    "This house believes that gap years should be encouraged before college.",
+    "This house regrets the pressure to choose science over the arts.",
+    "This house would make mental health days a right for students.",
+    "This house believes that sports should be a compulsory part of the college curriculum.",
+    "This house would ban homework for students below Class 8.",
+    "This house believes that mother tongue should be the medium of instruction up to Class 5.",
+    "This house would abolish the practice of ranking students.",
+    "This house regrets the commercialisation of festivals.",
+    "This house believes that heritage buildings should be preserved even when land is scarce.",
+    "This house would ban animal testing for cosmetics.",
+    "This house believes that space exploration is a waste of public money.",
+    "This house prefers a parliamentary system to a presidential system.",
+    "This house believes that the media should be free from government regulation.",
+    "This house would grant statehood to every union territory.",
+    "This house believes that international sporting events do more harm than good to host cities.",
+    "This house regrets the glorification of hustle culture."
+  ];
+  var q=document.getElementById("motion"),b=document.getElementById("next"),i=0;
+  b.addEventListener("click",function(){
+    i=(i+1)%motions.length;
+    q.classList.add("fade");
+    setTimeout(function(){q.textContent=motions[i];q.classList.remove("fade");},220);
+  });
+})();
+</script>
+</body>
+</html>
